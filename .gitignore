@@ -1,0 +1,22 @@
+**/.sass-cache
+**/maps/
+**/*.map
+**/.git/
+**/*.log
+**/log/
+
+# Dependency directories
+**/node_modules/
+
+# Temp directories for docker
+temp/
+
+# Unused directories
+**/wp-content/uploads
+**/wp-content/upgrade
+**/wp-content/languages
+
+
+.htaccess
+
+docker/**/tmp/

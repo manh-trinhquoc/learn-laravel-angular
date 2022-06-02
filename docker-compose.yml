@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Php.Dockerfile
+    volumes:
+      - ./laravel:/var/www/html
+      - ./docker/wordpress/usr/local/bin/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      - ./docker/wordpress/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/wordpress/tmp/xdebug:/tmp/xdebug
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./mysqldump/test_hackerpair.sql:/docker-entrypoint-initdb.d/test_hackerpair.sql
+    
+  web:
+    image: nginx:alpine
+    ports:
+      - "89:80"
+    volumes:
+      - ./docker/web/etc/nginx/conf.d:/etc/nginx/conf.d
+      - ./laravel:/var/www/html
+    depends_on:
+      - php
+  # các service để test
+  ubuntu:
+    build:
+      context: .
+      dockerfile: Ubuntu.Dockerfile
+    user: root
+    volumes:
+      - ./laravel/:/var/www/html
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+  profiling:
+    build:
+      context: .
+      dockerfile: Profiling.Dockerfile
+    volumes:
+      - ./docker/wordpress/tmp/xdebug:/tmp/
+    ports:
+      - "90:8080"
+  adminer:
+    image: adminer
+    # restart: always
+    ports:
+      - 9080:8080
+    depends_on:
+      - db
