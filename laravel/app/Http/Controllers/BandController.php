@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Band;
 
 class BandController extends Controller
 {
@@ -13,7 +14,11 @@ class BandController extends Controller
      */
     public function index()
     {
-        //
+        $bands = Band::all();
+
+        return view('bands.index', [
+            'bands' => $bands
+        ]);
     }
 
     /**
@@ -46,6 +51,11 @@ class BandController extends Controller
     public function show($id)
     {
         //
+        $band = Band::find($id);
+
+        return view('bands.show', [
+            'band' => $band
+        ]);
     }
 
     /**

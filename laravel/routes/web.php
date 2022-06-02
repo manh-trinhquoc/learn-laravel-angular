@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/band', function () {
     return view('band');
 });
+
+Route::resource('bands', App\Http\Controllers\BandController::class);
