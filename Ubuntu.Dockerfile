@@ -27,6 +27,8 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
 RUN bash /tmp/nodesource_setup.sh
 RUN apt-get install -y nodejs
 RUN apt-get install -y build-essential
+RUN npm install -g typescript
+
 
 # cài require cho chrome webdriver để chạy headless chrome
 # 1. Cài driver
