@@ -7,7 +7,7 @@ import { BeersService } from './beers.service';
   styleUrls: ['./beers.component.css']
 })
 export class BeersComponent implements OnInit {
-  public beersList: any [];
+  public beersList: any[];
   public requestError: any;
 
   constructor(private beers: BeersService) { }
@@ -20,7 +20,7 @@ export class BeersComponent implements OnInit {
    * Get beers, page = 1, per_page= 10
    */
 
-  public getBeers () {
+  public getBeers() {
     return this.beers.get(1, 20).subscribe(
       response => this.handleResponse(response),
       error => this.handleError(error)
@@ -31,7 +31,7 @@ export class BeersComponent implements OnInit {
    * Handling response
    */
 
-  protected handleResponse (response: any) {
+  protected handleResponse(response: any) {
     this.requestError = null;
     return this.beersList = response;
   }
@@ -40,7 +40,7 @@ export class BeersComponent implements OnInit {
    * Handling error
    */
 
-  protected handleError (error: any) {
+  protected handleError(error: any) {
     return this.requestError = error;
   }
 
