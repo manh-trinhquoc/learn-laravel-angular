@@ -58,4 +58,24 @@ class Bike extends Model
         'mods',
         'picture'
     ];
+
+    /**
+    * Relationship.
+    *
+    * @var string
+    */
+    public function builder()
+    {
+        return $this->belongsTo('App\Builder');
+    }
+
+    /**
+    * Relationship.
+    *
+    * @var string
+    */
+    public function items()
+    {
+        return $this->hasMany('App\Item');
+    }
 }
