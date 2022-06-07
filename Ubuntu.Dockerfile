@@ -44,6 +44,10 @@ RUN apt-get -y install google-chrome-stable
 # support for screenshot capturing
 # sudo apt-get -y install imagemagick x11-apps
 
+# cài angular cli
+RUN npm install -g @angular/cli@latest
+
+
 WORKDIR /var/www/html
 
 ENTRYPOINT tail -F anything
