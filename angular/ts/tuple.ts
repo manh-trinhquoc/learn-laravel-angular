@@ -4,3 +4,4 @@ myArray = [0, 'test', false]
 console.log(myArray);
 
 //
+
