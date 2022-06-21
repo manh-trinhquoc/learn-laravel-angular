@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
-* @SWG\Definition(
-    * definition="Builder",
+* @OA\Schema(
+    * schema="Builder",
     * required={"name", "description", "location"},
-    * @SWG\Property(
+    * @OA\Property(
         * property="name",
         * type="string",
         * description="Builder name",
         * example="Jesse James"
         * ),
-    * @SWG\Property(
+    * @OA\Property(
         * property="description",
         * type="string",
         * description="Famous Motorcycle builder from Texas",
         * example="Austin Speed Shop"
     * ),
-    * @SWG\Property(
+    * @OA\Property(
         * property="location",
         * type="string",
         * description="Texas/USA",

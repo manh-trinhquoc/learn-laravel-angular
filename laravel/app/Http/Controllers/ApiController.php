@@ -22,13 +22,6 @@ use Illuminate\Http\Request;
 */
 class ApiController extends Controller
 {
-    /**
-     * @OA\Get(
-     *     path="/",
-     *     description="Home page",
-     *     @OA\Response(response="default", description="Welcome page")
-     * )
-     */
     public function test()
     {
         return 'test';

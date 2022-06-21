@@ -1,14 +1,136 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "My First API",
-        "version": "0.1"
+        "title": "learn Laravel angular project",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.0.1"
     },
+    "servers": [
+        {
+            "url": "/api/documentation"
+        }
+    ],
     "paths": {
-        "/": {
+        "/bands": {
             "get": {
-                "description": "Home page",
-                "operationId": "1dd941a74edf1227de09bfa1d077ffe4",
+                "tags": [
+                    "UnAuthorize"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "show all bands",
+                "operationId": "2d88f149248e1048071c7117b2c78bfb",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        },
+        "/bands/create": {
+            "get": {
+                "tags": [
+                    "UnAuthorize"
+                ],
+                "summary": "Show the form for creating a new resource.",
+                "description": "form tạo bands mới. chưa có code",
+                "operationId": "51284e5b0a97d26ca67145275234946c",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        },
+        "/bands/store": {
+            "post": {
+                "tags": [
+                    "UnAuthorize"
+                ],
+                "summary": "Store a newly created resource in storage.",
+                "description": "lưu vào db bands mới. chưa có code",
+                "operationId": "e2ca1a4eaa932019fa58b3e3b4076d69",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        },
+        "/bands/{id}": {
+            "get": {
+                "tags": [
+                    "UnAuthorize"
+                ],
+                "summary": "get user detail",
+                "description": "view thông tin bands mới. chưa có code",
+                "operationId": "cbf44e868e6bb76099cb1a519e45d950",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id that need to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid Band id supplied"
+                    },
+                    "404": {
+                        "description": "Band not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Authorize"
+                ],
+                "summary": "Update the specified resource in storage.",
+                "description": "lưu vào db thông tin sửa bands. chưa có code",
+                "operationId": "8678223e2b7d08e0d78b54482634f27c",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Authorize"
+                ],
+                "summary": "Remove the specified resource from storage.",
+                "description": "xóa khỏi db thông tin bands. chưa có code",
+                "operationId": "db8c94d7e25d697de386ab1994687962",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        },
+        "/bands/{id}/edit": {
+            "get": {
+                "tags": [
+                    "Authorize"
+                ],
+                "summary": "Show the form for editing the specified resource.",
+                "description": "form sửa thông tin bands. chưa có code",
+                "operationId": "d4ea5d030b8dcc75efd5154bd011a102",
                 "responses": {
                     "default": {
                         "description": "Welcome page"
@@ -16,5 +138,84 @@
                 }
             }
         }
-    }
+    },
+    "components": {
+        "schemas": {
+            "Bike": {
+                "required": [
+                    "make",
+                    "model",
+                    "year",
+                    "mods"
+                ],
+                "properties": {
+                    "make": {
+                        "description": "Company name",
+                        "type": "string",
+                        "example": "Harley Davidson, Honda, Yamaha"
+                    },
+                    "model": {
+                        "description": "Motorcycle model",
+                        "type": "string",
+                        "example": "Xl1200, Shadow ACE, V-Star"
+                    },
+                    "year": {
+                        "description": "Fabrication year",
+                        "type": "string",
+                        "example": "2009, 2008, 2007"
+                    },
+                    "mods": {
+                        "description": "Motorcycle description of modifications",
+                        "type": "string",
+                        "example": "New exhaust system"
+                    },
+                    "picture": {
+                        "description": "Bike image URL",
+                        "type": "string",
+                        "example": "http://www.sample.com/my.bike.jpg"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "type": "object"
+            },
+            "Builder": {
+                "required": [
+                    "name",
+                    "description",
+                    "location"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Builder name",
+                        "type": "string",
+                        "example": "Jesse James"
+                    },
+                    "description": {
+                        "description": "Famous Motorcycle builder from Texas",
+                        "type": "string",
+                        "example": "Austin Speed Shop"
+                    },
+                    "location": {
+                        "description": "Texas/USA",
+                        "type": "string",
+                        "example": "Austin, Texas"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "UnAuthorize",
+            "description": "No user login required"
+        },
+        {
+            "name": "Authorize",
+            "description": "User login required"
+        }
+    ]
 }

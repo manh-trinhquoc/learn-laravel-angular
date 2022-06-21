@@ -8,7 +8,26 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 /**
- * @OA\Info(title="My First API", version="0.1")
+ * @OA\Info(
+    * title="learn Laravel angular project",
+    * version="0.0.1",
+    * description="L5 Swagger OpenApi description",
+    * @OA\Contact(
+*          email="admin@admin.com"
+*      ),
+*      @OA\License(
+*          name="Apache 2.0",
+*          url="http://www.apache.org/licenses/LICENSE-2.0.html"
+*      )
+ * )
+ *
+ * @OA\Server(
+*      url="/api/documentation"
+*  )
+*
+ * @OA\Tag(name="UnAuthorize", description="No user login required")
+ * @OA\Tag(name="Authorize", description="User login required")
+ *
  */
 class Controller extends BaseController
 {
