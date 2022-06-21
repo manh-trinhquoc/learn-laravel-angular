@@ -25,7 +25,7 @@
                 ],
                 "summary": "Display a listing of the resource.",
                 "description": "show all bands",
-                "operationId": "2d88f149248e1048071c7117b2c78bfb",
+                "operationId": "bandsIndex",
                 "responses": {
                     "default": {
                         "description": "Welcome page"
@@ -55,7 +55,10 @@
                 ],
                 "summary": "Store a newly created resource in storage.",
                 "description": "lưu vào db bands mới. chưa có code",
-                "operationId": "e2ca1a4eaa932019fa58b3e3b4076d69",
+                "operationId": "bandsStore",
+                "requestBody": {
+                    "required": true
+                },
                 "responses": {
                     "default": {
                         "description": "Welcome page"
@@ -78,8 +81,7 @@
                         "description": "id that need to be fetched",
                         "required": true,
                         "schema": {
-                            "type": "integer",
-                            "format": "int64"
+                            "type": "integer"
                         },
                         "example": 1
                     }
@@ -141,6 +143,27 @@
     },
     "components": {
         "schemas": {
+            "Band": {
+                "title": "Band",
+                "description": "cac ban nhac",
+                "required": [
+                    "name",
+                    "description"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "band name",
+                        "type": "string",
+                        "example": "tesst"
+                    },
+                    "description": {
+                        "description": "mo ta",
+                        "type": "string",
+                        "example": "tesst mota"
+                    }
+                },
+                "type": "object"
+            },
             "Bike": {
                 "required": [
                     "make",
@@ -173,10 +196,6 @@
                         "description": "Bike image URL",
                         "type": "string",
                         "example": "http://www.sample.com/my.bike.jpg"
-                    },
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
                     }
                 },
                 "type": "object"

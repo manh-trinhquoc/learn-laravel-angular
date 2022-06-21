@@ -46,12 +46,6 @@ class Bike extends Model
     use HasFactory;
 
     /**
-     * @OA\Property(format="int64")
-     * @var int
-     */
-    public $id;
-
-    /**
     * The attributes that are mass assignable.
     *
     * @var array

@@ -15,6 +15,7 @@ class BandController extends Controller
      * @OA\Get(
      *     path="/bands",
      *     tags={"UnAuthorize"},
+     *     operationId="bandsIndex",
      *     description="show all bands",
      *     @OA\Response(response="default", description="Welcome page")
      * )
@@ -54,7 +55,11 @@ class BandController extends Controller
      * @OA\Post(
      *     path="/bands/store",
      *     tags={"UnAuthorize"},
+     *     operationId="bandsStore",
      *     description="lưu vào db bands mới. chưa có code",
+     *     @OA\RequestBody(
+     *          required=true,
+     *      ),
      *     @OA\Response(response="default", description="Welcome page")
      * )
      */
@@ -82,10 +87,9 @@ class BandController extends Controller
         *     example=1,
             * @OA\Schema(
      *           type="integer",
-     *           format="int64"
      *        )
         *   ),
-        *   @OA\Response(response=200, description="successful operation", @OA\Schema(ref="#/components/schemas/Band")),
+        *   @OA\Response(response=200, description="successful operation"),
         *   @OA\Response(response=400, description="Invalid Band id supplied"),
         *   @OA\Response(response=404, description="Band not found")
      * )
