@@ -27,6 +27,7 @@ use Illuminate\Routing\Controller as BaseController;
 *
  * @OA\Tag(name="UnAuthorize", description="No user login required")
  * @OA\Tag(name="Authorize", description="User login required")
+ * @OA\Tag(name="Builders", description="Builder model controller")
  *
  */
 class Controller extends BaseController

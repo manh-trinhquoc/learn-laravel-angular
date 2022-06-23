@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
-* @OA\Schems(
+* @OA\Schema(
     * schema="Garage",
     * required={"name", "custumer_level"},
     * @OA\Property(

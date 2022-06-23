@@ -18,6 +18,155 @@
         }
     ],
     "paths": {
+        "/api/builders": {
+            "get": {
+                "tags": [
+                    "Builders"
+                ],
+                "summary": "List Builders",
+                "description": "Display a listing of the resource.",
+                "operationId": "2c4fad501b178c2f6d4fbee9a277b783",
+                "responses": {
+                    "200": {
+                        "description": "Success: List all Builders"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Builders"
+                ],
+                "summary": "Create Builder",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "d51dafff207f5e9d011bac6e02d3e278",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success: A Newly Created Builder"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "405": {
+                        "description": "Invalid HTTP Method"
+                    }
+                }
+            }
+        },
+        "/api/builders/{id}": {
+            "get": {
+                "tags": [
+                    "Builders"
+                ],
+                "summary": "Get Builder by Id",
+                "description": "Display the specified resource.",
+                "operationId": "dd7b384a20950e38a973480561241751",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Display the specified Builder by id.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success: Return the Builder"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "405": {
+                        "description": "Invalid HTTP Method"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Builders"
+                ],
+                "summary": "Update Builder",
+                "description": "Update the specified resource in storage.",
+                "operationId": "22e6bba73dd2c5b23ea4099c26c0fccf",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Update the specified Builder by id.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success: Return the Builder updated"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "405": {
+                        "description": "Invalid HTTP Method"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Builders"
+                ],
+                "summary": "Delete Builder",
+                "description": "Delete the specified Builder by id",
+                "operationId": "ca6da509bbfa23452a3279d0a9bb0fa8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Builder id to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Invalid HTTP Method"
+                    },
+                    "204": {
+                        "description": "Success: successful deleted"
+                    }
+                }
+            }
+        },
         "/bands": {
             "get": {
                 "tags": [
@@ -225,6 +374,25 @@
                 },
                 "type": "object"
             },
+            "Garage": {
+                "required": [
+                    "name",
+                    "custumer_level"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Jhonny Garage",
+                        "type": "string",
+                        "example": "Exhaust"
+                    },
+                    "customer_level": {
+                        "description": "Whats the garage level",
+                        "type": "integer",
+                        "example": "10"
+                    }
+                },
+                "type": "object"
+            },
             "Item": {
                 "required": [
                     "type",
@@ -249,6 +417,56 @@
                     }
                 },
                 "type": "object"
+            },
+            "Rating": {
+                "required": [
+                    "bike_id",
+                    "user_id",
+                    "rating"
+                ],
+                "properties": {
+                    "biker_id": {
+                        "description": "Bike id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "user_id": {
+                        "description": "User id",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "rating": {
+                        "description": "Vote by rating",
+                        "type": "integer",
+                        "example": "10"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "required": [
+                    "name",
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "User name",
+                        "type": "string",
+                        "example": "John Conor"
+                    },
+                    "email": {
+                        "description": "Email Address",
+                        "type": "string",
+                        "example": "john.conor@terminator.com"
+                    },
+                    "password": {
+                        "description": "A very secure password",
+                        "type": "string",
+                        "example": "123456"
+                    }
+                },
+                "type": "object"
             }
         }
     },
@@ -260,6 +478,10 @@
         {
             "name": "Authorize",
             "description": "User login required"
+        },
+        {
+            "name": "Builders",
+            "description": "Builder model controller"
         }
     ]
 }
