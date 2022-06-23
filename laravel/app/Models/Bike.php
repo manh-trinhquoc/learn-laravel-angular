@@ -65,7 +65,7 @@ class Bike extends Model
     */
     public function builder()
     {
-        return $this->belongsTo('App\Builder');
+        return $this->belongsTo('App\Models\Builder');
     }
 
     /**
@@ -75,6 +75,36 @@ class Bike extends Model
     */
     public function items()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany('App\Models\Item');
+    }
+
+    /**
+     * Relationship
+     *
+     * @return void
+     */
+    public function garages()
+    {
+        return $this->belongsToMany('App\Models\Garage');
+    }
+
+    /**
+     * Relationship
+     *
+     * @return void
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    /**
+     * Relationship
+     *
+     * @return void
+     */
+    public function ratings()
+    {
+        return $this->hasMany('App\Models\Rating');
     }
 }

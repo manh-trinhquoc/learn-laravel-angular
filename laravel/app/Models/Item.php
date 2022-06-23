@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
-* @SWG\Definition(
-    * definition="Item",
+* @OA\Schema(
+    * schema="Item",
     * required={"type", "name", "company"},
-    * @SWG\Property(
+    * @OA\Property(
         * property="type",
         * type="string",
         * description="Item Type",
         * example="Exhaust"
     * ),
-    * @SWG\Property(
+    * @OA\Property(
         * property="name",
         * type="string",
         * description="Item name",
         * example="2 into 1 Exhaust"
     * ),
-    * @SWG\Property(
+    * @OA\Property(
         * property="company",
         * type="string",
         * description="Produced by: some company",
@@ -58,6 +58,6 @@ class Item extends Model
     */
     public function bike()
     {
-        return $this->belongsTo('App\Bike');
+        return $this->belongsTo('App\Models\Bike');
     }
 }

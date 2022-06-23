@@ -224,6 +224,31 @@
                     }
                 },
                 "type": "object"
+            },
+            "Item": {
+                "required": [
+                    "type",
+                    "name",
+                    "company"
+                ],
+                "properties": {
+                    "type": {
+                        "description": "Item Type",
+                        "type": "string",
+                        "example": "Exhaust"
+                    },
+                    "name": {
+                        "description": "Item name",
+                        "type": "string",
+                        "example": "2 into 1 Exhaust"
+                    },
+                    "company": {
+                        "description": "Produced by: some company",
+                        "type": "string",
+                        "example": "Vance and Hines"
+                    }
+                },
+                "type": "object"
             }
         }
     },
