@@ -86,7 +86,9 @@ class ItemController extends Controller
             * name="id",
             * in="path",
             * required=true,
-            * type="integer",
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
             * description="Display the specified Item by id.",
         * ),
         * @OA\Response(
@@ -122,7 +124,9 @@ class ItemController extends Controller
             * name="id",
             * in="path",
             * required=true,
-            * type="integer",
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
             * description="Update the specified Item by id.",
         * ),
         * @OA\RequestBody(
@@ -169,8 +173,9 @@ class ItemController extends Controller
             * in="path",
             * name="id",
             * required=true,
-            * type="integer",
-            * format="int64"
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
         * ),
         * @OA\Response(
             * response=404,

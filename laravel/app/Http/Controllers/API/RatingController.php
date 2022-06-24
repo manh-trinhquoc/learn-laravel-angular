@@ -35,8 +35,9 @@ class RatingController extends Controller
             * in="path",
             * name="id",
             * required=true,
-            * type="integer",
-            * format="int64",
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
             * description="Bike Id"
         * ),
         * @OA\RequestBody(

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Bike;
+use Validator;
 
 class BikeController extends Controller
 {
@@ -67,6 +68,16 @@ class BikeController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'make' => 'required',
+            'model' => 'required',
+            'year' => 'required',
+            'mods' => 'required',
+            'builder_id' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
         $createBike = Bike::create($request->all());
 
         return $createBike;
@@ -124,7 +135,9 @@ class BikeController extends Controller
             * name="id",
             * in="path",
             * required=true,
-            * type="integer",
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
             * description="Update the specified bike by id.",
         * ),
         * @OA\RequestBody(
@@ -149,6 +162,18 @@ class BikeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'make' => 'required',
+            'model' => 'required',
+            'year' => 'required',
+            'mods' => 'required',
+            'builder_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
         $updateBikeById = Bike::findOrFail($id);
         $updateBikeById->update($request->all());
 
@@ -171,8 +196,9 @@ class BikeController extends Controller
             * in="path",
             * name="id",
             * required=true,
-            * type="integer",
-            * format="int64"
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
         * ),
         * @OA\Response(
             * response=404,
