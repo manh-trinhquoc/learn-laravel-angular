@@ -159,12 +159,12 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Delete(
+     * @OA\Delete(
         * path="/api/items/{id}",
         * tags={"Items"},
         * summary="Delete Item",
         * description="Delete the specified Item by id",
-        * @SWG\Parameter(
+        * @OA\Parameter(
             * description="Item id to delete",
             * in="path",
             * name="id",
@@ -172,11 +172,11 @@ class ItemController extends Controller
             * type="integer",
             * format="int64"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=404,
             * description="Not found"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=204,
             * description="Success: successful deleted"
         * ),

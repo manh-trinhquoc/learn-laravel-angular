@@ -13,16 +13,16 @@ class BikeController extends Controller
      *
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Get(
+     * @OA\Get(
         * path="/api/bikes",
         * tags={"Bikes"},
         * summary="List Bikes",
-        * @SWG\Response(
+        * @OA\Response(
             * response=200,
             * description="Success: List all Bikes",
-            * @SWG\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/definitions/Bike")
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -41,7 +41,7 @@ class BikeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Post(
+     * @OA\Post(
         * path="/api/bikes",
         * tags={"Bikes"},
         * summary="Create Bike",
@@ -50,16 +50,16 @@ class BikeController extends Controller
         *       @OA\Schema(ref="#/definitions/Bike"),
  *          )
  *      ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=201,
             * description="Success: A Newly Created Bike",
-            * @SWG\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/definitions/Bike")
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="422",
             * description="Missing mandatory field"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -78,23 +78,25 @@ class BikeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Get(
+     * @OA\Get(
         * path="/api/bikes/{id}",
         * tags={"Bikes"},
         * summary="Get Bike by Id",
-        * @SWG\Parameter(
+        * @OA\Parameter(
             * name="id",
             * in="path",
             * required=true,
-            * type="integer",
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
             * description="Display the specified bike by id.",
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=200,
             * description="Success: Return the Bike",
-            * @SWG\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/definitions/Bike")
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -114,11 +116,11 @@ class BikeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Put(
+     * @OA\Put(
         * path="/api/bikes/{id}",
         * tags={"Bikes"},
         * summary="Update Bike",
-        * @SWG\Parameter(
+        * @OA\Parameter(
             * name="id",
             * in="path",
             * required=true,
@@ -130,16 +132,16 @@ class BikeController extends Controller
         *       @OA\Schema(ref="#/definitions/Bike"),
  *          )
  *      ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=200,
             * description="Success: Return the Bike updated",
-            * @SWG\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/definitions/Bike")
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="422",
             * description="Missing mandatory field"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -159,12 +161,12 @@ class BikeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Delete(
+     * @OA\Delete(
         * path="/api/bikes/{id}",
         * tags={"Bikes"},
         * summary="Delete bike",
         * description="Delete the specified bike by id",
-        * @SWG\Parameter(
+        * @OA\Parameter(
             * description="Bike id to delete",
             * in="path",
             * name="id",
@@ -172,11 +174,11 @@ class BikeController extends Controller
             * type="integer",
             * format="int64"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=404,
             * description="Not found"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=204,
             * description="Success: successful deleted"
         * ),
