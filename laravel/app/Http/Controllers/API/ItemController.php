@@ -13,16 +13,16 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Get(
+     * @OA\Get(
         * path="/api/items",
         * tags={"Items"},
         * summary="List Items",
-        * @SWG\Response(
+        * @OA\Response(
             * response=200,
             * description="Success: List all Items",
-            * @SWG\Schema(ref="#/definitions/Item")
+            * @OA\Schema(ref="#/definitions/Item")
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -41,35 +41,35 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      *
-     * @SWG\Post(
-* path="/api/items",
-* tags={"Items"},
-* summary="Create Item",
-* @SWG\Parameter(
-* name="body",
-* in="body",
-* required=true,
-* @SWG\Schema(ref="#/definitions/Item"),
-* description="Json format",
-* ),
-* @SWG\Response(
-* response=201,
-* description="Success: A Newly Created Item",
-* @SWG\Schema(ref="#/definitions/Item")
-* ),
-* @SWG\Response(
-* response="422",
-* description="Missing mandatory field"
-* ),
-* @SWG\Response(
-* response="404",
-* description="Not Found"
-* )
-* ),
+     * @OA\Post(
+        * path="/api/items",
+        * tags={"Items"},
+        * summary="Create Item",
+        * @OA\RequestBody(
+    *       @OA\JsonContent(
+        *       @OA\Schema(ref="#/definitions/Item"),
+ *          )
+ *      ),
+        * @OA\Response(
+            * response=201,
+            * description="Success: A Newly Created Item",
+            * @OA\Schema(ref="#/definitions/Item")
+        * ),
+        * @OA\Response(
+            * response="422",
+            * description="Missing mandatory field"
+        * ),
+        * @OA\Response(
+            * response="404",
+            * description="Not Found"
+        * )
+    * ),
      */
     public function store(Request $request)
     {
-        //
+        $createItem = Item::create($request->all());
+
+        return $createItem;
     }
 
     /**
@@ -77,10 +77,34 @@ class ItemController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Get(
+        * path="/api/items/{id}",
+        * tags={"Items"},
+        * summary="Get Item by Id",
+        * @OA\Parameter(
+            * name="id",
+            * in="path",
+            * required=true,
+            * type="integer",
+            * description="Display the specified Item by id.",
+        * ),
+        * @OA\Response(
+            * response=200,
+            * description="Success: Return the Item",
+            * @OA\Schema(ref="#/definitions/Item")
+        * ),
+        * @OA\Response(
+            * response="404",
+            * description="Not Found"
+        * )
+    * ),
      */
     public function show($id)
     {
-        //
+        $showItemById = Item::with('Bike')->findOrFail($id);
+
+        return $showItemById;
     }
 
     /**
@@ -89,10 +113,44 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     *  @OA\Put(
+        * path="/api/items/{id}",
+        * tags={"Items"},
+        * summary="Update Item",
+        * @OA\Parameter(
+            * name="id",
+            * in="path",
+            * required=true,
+            * type="integer",
+            * description="Update the specified Item by id.",
+        * ),
+        * @OA\RequestBody(
+    *       @OA\JsonContent(
+        *       @OA\Schema(ref="#/definitions/Item"),
+ *          )
+ *      ),
+        * @OA\Response(
+            * response=200,
+            * description="Success: Return the Item updated",
+            * @OA\Schema(ref="#/definitions/Item")
+        * ),
+        * @OA\Response(
+            * response="422",
+            * description="Missing mandatory field"
+        * ),
+        * @OA\Response(
+            * response="404",
+            * description="Not Found"
+        * )
+    * ),
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateItemById = Item::findOrFail($id);
+        $updateItemById->update($request->all());
+
+        return $updateItemById;
     }
 
     /**
@@ -100,9 +158,34 @@ class ItemController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * @SWG\Delete(
+        * path="/api/items/{id}",
+        * tags={"Items"},
+        * summary="Delete Item",
+        * description="Delete the specified Item by id",
+        * @SWG\Parameter(
+            * description="Item id to delete",
+            * in="path",
+            * name="id",
+            * required=true,
+            * type="integer",
+            * format="int64"
+        * ),
+        * @SWG\Response(
+            * response=404,
+            * description="Not found"
+        * ),
+        * @SWG\Response(
+            * response=204,
+            * description="Success: successful deleted"
+        * ),
+    * )
      */
     public function destroy($id)
     {
-        //
+        $deleteItemById = Item::findOrFail($id)->delete();
+
+        return response()->json([], 204);
     }
 }
