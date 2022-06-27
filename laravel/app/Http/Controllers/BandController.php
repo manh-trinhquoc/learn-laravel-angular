@@ -99,7 +99,7 @@ class BandController extends Controller
      * @OA\Get(
      *     path="/bands/{id}",
      *     tags={"Bands"},
-     *     description="view thông tin bands qua id. chưa có code",
+     *     description="view thông tin bands qua id",
      *     summary="get band detail",
         * security={
             * { "api_key":{} }
@@ -114,8 +114,7 @@ class BandController extends Controller
      *           type="integer",
      *        )
         *   ),
-        *   @OA\Response(response=200, description="successful operation"),
-        *   @OA\Response(response=400, description="Invalid Band id supplied"),
+        *   @OA\Response(response=200, description="render thông tin của band"),
         *   @OA\Response(response=404, description="Band not found")
      * )
      *
@@ -124,6 +123,9 @@ class BandController extends Controller
     {
         //
         $band = Band::find($id);
+        if ($band == null) {
+            return abort(404, 'Không tìm thấy dữ liệu band');
+        }
 
         return view('bands.show', [
             'band' => $band

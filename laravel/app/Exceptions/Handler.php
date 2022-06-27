@@ -45,42 +45,43 @@ class Handler extends ExceptionHandler
     }
 
     //custom render
-    // public function render($request, Exception $exception)
-    // {
-    //     if ($exception instanceof ModelNotFoundException && $request->wantsJson()) { // Enable header Accept: application/json to see the proper error msg
-    //         return response()->json(
-    //             ['error' => 'Resource not found'],
-    //             404
-    //         );
-    //     }
-    //     if ($exception instanceof MethodNotAllowedHttpException) {
-    //         return response()->json(
-    //             ['error' => 'Method Not Allowed'],
-    //             405
-    //         );
-    //     }
-    //     if ($exception instanceof UnauthorizedHttpException) {
-    //         return response()->json(
-    //             ['error' => 'Token not provided'],
-    //             401
-    //         );
-    //     }
-    //     // JWT Auth related errors
-    //     if ($exception instanceof JWTException) {
-    //         return response()->json(['error' => $exception], 500);
-    //     }
-    //     if ($exception instanceof TokenExpiredException) {
-    //         return response()->json(
-    //             ['error' => 'token_expired'],
-    //             $exception->getStatusCode()
-    //         );
-    //     } elseif ($exception instanceof TokenInvalidException) {
-    //         return response()->json(
-    //             ['error' => 'token_invalid'],
-    //             $exception->getStatusCode()
-    //         );
-    //     }
+    public function render($request, Throwable $exception)
+    {
+        // var_dump($exception);
+        if ($exception instanceof ModelNotFoundException && $request->wantsJson()) { // Enable header Accept: application/json to see the proper error msg
+            return response()->json(
+                ['error' => 'Resource not found'],
+                404
+            );
+        }
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return response()->json(
+                ['error' => 'Method Not Allowed'],
+                405
+            );
+        }
+        if ($exception instanceof UnauthorizedHttpException) {
+            return response()->json(
+                ['error' => 'Token not provided'],
+                401
+            );
+        }
+        // JWT Auth related errors
+        if ($exception instanceof JWTException) {
+            return response()->json(['error' => $exception], 500);
+        }
+        if ($exception instanceof TokenExpiredException) {
+            return response()->json(
+                ['error' => 'token_expired'],
+                $exception->getStatusCode()
+            );
+        } elseif ($exception instanceof TokenInvalidException) {
+            return response()->json(
+                ['error' => 'token_invalid'],
+                $exception->getStatusCode()
+            );
+        }
 
-    //     return parent::render($request, $exception);
-    // }
+        return parent::render($request, $exception);
+    }
 }

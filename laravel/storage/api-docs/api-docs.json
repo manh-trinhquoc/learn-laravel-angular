@@ -568,7 +568,7 @@
                     "Bands"
                 ],
                 "summary": "get band detail",
-                "description": "view thông tin bands qua id. chưa có code",
+                "description": "view thông tin bands qua id",
                 "operationId": "cbf44e868e6bb76099cb1a519e45d950",
                 "parameters": [
                     {
@@ -584,10 +584,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "successful operation"
-                    },
-                    "400": {
-                        "description": "Invalid Band id supplied"
+                        "description": "render thông tin của band"
                     },
                     "404": {
                         "description": "Band not found"
