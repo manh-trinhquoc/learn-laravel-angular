@@ -21,7 +21,12 @@ class BikeController extends Controller
         * @OA\Response(
             * response=200,
             * description="Success: List all Bikes",
-            * @OA\Schema(ref="#/definitions/Bike")
+            * @OA\JsonContent(
+               * examples = {
+                    * "example": @OA\Schema(ref="#/components/examples/BikeEx1", example="1"),
+               * }
+            * ),
+            *
         * ),
         * @OA\Response(
             * response="404",
@@ -48,13 +53,13 @@ class BikeController extends Controller
         * summary="Create Bike",
         * @OA\RequestBody(
     *       @OA\JsonContent(
-        *       @OA\Schema(ref="#/definitions/Bike"),
+        *       @OA\Schema(ref="#/components/schemas/Bike"),
  *          )
  *      ),
         * @OA\Response(
             * response=201,
             * description="Success: A Newly Created Bike",
-            * @OA\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/components/schemas/Bike")
         * ),
         * @OA\Response(
             * response="422",
@@ -105,7 +110,7 @@ class BikeController extends Controller
         * @OA\Response(
             * response=200,
             * description="Success: Return the Bike",
-            * @OA\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/components/schemas/Bike")
         * ),
         * @OA\Response(
             * response="404",
@@ -142,13 +147,13 @@ class BikeController extends Controller
         * ),
         * @OA\RequestBody(
     *       @OA\JsonContent(
-        *       @OA\Schema(ref="#/definitions/Bike"),
+        *       @OA\Schema(ref="#/components/schemas/Bike"),
  *          )
  *      ),
         * @OA\Response(
             * response=200,
             * description="Success: Return the Bike updated",
-            * @OA\Schema(ref="#/definitions/Bike")
+            * @OA\Schema(ref="#/components/schemas/Bike")
         * ),
         * @OA\Response(
             * response="422",

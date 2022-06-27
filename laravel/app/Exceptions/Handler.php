@@ -4,6 +4,11 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException as UnauthorizedHttpException;
+use Tymon\JWTAuth\Exceptions\JWTException as JWTException;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException as TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException as TokenInvalidException;
 
 class Handler extends ExceptionHandler
 {
@@ -38,4 +43,44 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    //custom render
+    // public function render($request, Exception $exception)
+    // {
+    //     if ($exception instanceof ModelNotFoundException && $request->wantsJson()) { // Enable header Accept: application/json to see the proper error msg
+    //         return response()->json(
+    //             ['error' => 'Resource not found'],
+    //             404
+    //         );
+    //     }
+    //     if ($exception instanceof MethodNotAllowedHttpException) {
+    //         return response()->json(
+    //             ['error' => 'Method Not Allowed'],
+    //             405
+    //         );
+    //     }
+    //     if ($exception instanceof UnauthorizedHttpException) {
+    //         return response()->json(
+    //             ['error' => 'Token not provided'],
+    //             401
+    //         );
+    //     }
+    //     // JWT Auth related errors
+    //     if ($exception instanceof JWTException) {
+    //         return response()->json(['error' => $exception], 500);
+    //     }
+    //     if ($exception instanceof TokenExpiredException) {
+    //         return response()->json(
+    //             ['error' => 'token_expired'],
+    //             $exception->getStatusCode()
+    //         );
+    //     } elseif ($exception instanceof TokenInvalidException) {
+    //         return response()->json(
+    //             ['error' => 'token_invalid'],
+    //             $exception->getStatusCode()
+    //         );
+    //     }
+
+    //     return parent::render($request, $exception);
+    // }
 }

@@ -25,10 +25,13 @@ use Illuminate\Routing\Controller as BaseController;
 *      url="/api/documentation"
 *  )
 *
- * @OA\Tag(name="UnAuthorize", description="No user login required")
- * @OA\Tag(name="Authorize", description="User login required")
- * @OA\Tag(name="Builders", description="Builder model controller")
- *
+* @OA\SecurityScheme(
+ *   securityScheme="api_key",
+ *  scheme="api_key",
+ *   type="apiKey",
+ *   in="header",
+ *   name="api_key"
+ * )
  */
 class Controller extends BaseController
 {

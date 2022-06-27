@@ -38,8 +38,39 @@ use Illuminate\Database\Eloquent\Model;
         * type="string",
         * description="Bike image URL",
         * example="http://www.sample.com/my.bike.jpg"
-    * )
-* )
+    * ),
+* ),
+* @OA\Examples(
+*   summary="Bike example 1",
+*   example = "BikeEx1",
+*   value = {
+        * {
+            * "make": "Honda",
+            * "model": "Shadow ACE",
+            * "year": "2007",
+            * "mods": "New exhaust system",
+            * "picture": "http://www.sample.com/my.bike.jpg"
+        * },
+        * {
+            * "make": "Honda",
+            * "model": "Shadow ACE",
+            * "year": "2007",
+            * "mods": "New exhaust system",
+            * "picture": "http://www.sample.com/my.bike.jpg"
+        * }
+*   },
+* ),
+* @OA\Examples(
+*   summary="Bike example 2",
+*   example = "BikeEx2",
+*   value = {
+        * "make": "Honda",
+        * "model": "Shadow ACE",
+        * "year": "2007",
+        * "mods": "New exhaust system",
+        * "picture": "http://www.sample.com/my.bike.jpg"
+*   },
+* ),
 */
 class Bike extends Model
 {

@@ -14,10 +14,17 @@ class BandController extends Controller
      *
      * @OA\Get(
      *     path="/bands",
-     *     tags={"UnAuthorize"},
-     *     operationId="bandsIndex",
+     *     tags={"Bands"},
      *     description="show all bands",
-     *     @OA\Response(response="default", description="Welcome page")
+     *     summary="List Bands",
+     *     @OA\Response(
+            * response="200",
+            * description="Hiện danh sách các bands",
+        * ),
+        *     @OA\Response(
+            * response="404",
+            * description="Not found",
+        * ),
      * )
      *
      */
@@ -36,9 +43,10 @@ class BandController extends Controller
      * @return \Illuminate\Http\Response
      * @OA\Get(
      *     path="/bands/create",
-     *     tags={"UnAuthorize"},
+     *     tags={"Bands"},
      *     description="form tạo bands mới. chưa có code",
-     *     @OA\Response(response="default", description="Welcome page")
+     *     summary="Tạo band mới",
+     *     @OA\Response(response="200", description="Form tạo Band")
      * )
      */
     public function create()
@@ -54,13 +62,27 @@ class BandController extends Controller
      *
      * @OA\Post(
      *     path="/bands/store",
-     *     tags={"UnAuthorize"},
-     *     operationId="bandsStore",
+     *     tags={"Bands"},
      *     description="lưu vào db bands mới. chưa có code",
-     *     @OA\RequestBody(
-     *          required=true,
-     *      ),
-     *     @OA\Response(response="default", description="Welcome page")
+     *     summary="Create Band",
+        * @OA\RequestBody(
+    *       @OA\JsonContent(
+        *       @OA\Schema(ref="#/components/schemas/Band"),
+ *          )
+ *      ),
+        * @OA\Response(
+            * response=201,
+            * description="Success: A Newly Created Band",
+            * @OA\Schema(ref="#/components/schemas/Band")
+        * ),
+        * @OA\Response(
+            * response="422",
+            * description="Missing mandatory field"
+        * ),
+        * @OA\Response(
+            * response="404",
+            * description="Not Found"
+        * )
      * )
      */
     public function store(Request $request)
@@ -76,9 +98,12 @@ class BandController extends Controller
      *
      * @OA\Get(
      *     path="/bands/{id}",
-     *     tags={"UnAuthorize"},
-     *     description="view thông tin bands mới. chưa có code",
-     *     summary="get user detail",
+     *     tags={"Bands"},
+     *     description="view thông tin bands qua id. chưa có code",
+     *     summary="get band detail",
+        * security={
+            * { "api_key":{} }
+        * },
         *  @OA\Parameter(
         *     name="id",
         *     in="path",
@@ -113,9 +138,22 @@ class BandController extends Controller
      *
      * @OA\Get(
      *     path="/bands/{id}/edit",
-     *     tags={"Authorize"},
+     *     tags={"Bands"},
      *     description="form sửa thông tin bands. chưa có code",
-     *     @OA\Response(response="default", description="Welcome page")
+     *     summary="form sửa bands",
+     *     @OA\Parameter(
+        *     name="id",
+        *     in="path",
+        *     description="id that need to be fetched",
+        *     required=true,
+        *     example=1,
+            * @OA\Schema(
+     *           type="integer",
+     *        )
+        *   ),
+     *     @OA\Response(response="200", description="Form sửa band"),
+     *     @OA\Response(response=400, description="Invalid Band id supplied"),
+     *     @OA\Response(response=404, description="Band not found")
      * )
      *
      */
@@ -133,9 +171,37 @@ class BandController extends Controller
      *
      * @OA\Put(
      *     path="/bands/{id}",
-     *     tags={"Authorize"},
+     *     tags={"Bands"},
      *     description="lưu vào db thông tin sửa bands. chưa có code",
-     *     @OA\Response(response="default", description="Welcome page")
+     *     summary="update band",
+     *     @OA\Parameter(
+        *     name="id",
+        *     in="path",
+        *     description="id that need to be fetched",
+        *     required=true,
+        *     example=1,
+            * @OA\Schema(
+    *           type="integer",
+    *        )
+        *   ),
+     *      @OA\RequestBody(
+        *       @OA\JsonContent(
+            *       @OA\Schema(ref="#/components/schemas/Band"),
+    *          )
+    *      ),
+        * @OA\Response(
+            * response=200,
+            * description="Success: Return the Band updated",
+            * @OA\Schema(ref="#/components/schemas/Band")
+        * ),
+        * @OA\Response(
+            * response="422",
+            * description="Missing mandatory field"
+        * ),
+        * @OA\Response(
+            * response="404",
+            * description="Not Found"
+        * ),
      * )
      */
     public function update(Request $request, $id)
@@ -151,9 +217,26 @@ class BandController extends Controller
      *
      * @OA\Delete(
      *     path="/bands/{id}",
-     *     tags={"Authorize"},
+     *     tags={"Bands"},
      *     description="xóa khỏi db thông tin bands. chưa có code",
-     *     @OA\Response(response="default", description="Welcome page")
+     *      summary="delete band",
+     *     @OA\Parameter(
+            * description="band id to delete",
+            * in="path",
+            * name="id",
+            * required=true,
+            * @OA\Schema(
+        *         type="integer",
+        *     ),
+        * ),
+        * @OA\Response(
+            * response=404,
+            * description="Not found"
+        * ),
+        * @OA\Response(
+            * response=204,
+            * description="Success: successful deleted"
+        * ),
      * )
      */
     public function destroy($id)

@@ -28,7 +28,17 @@
                 "operationId": "c3e0a316b074d9336ec18536c791f8ff",
                 "responses": {
                     "200": {
-                        "description": "Success: List all Bikes"
+                        "description": "Success: List all Bikes",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "1": {
+                                        "$ref": "#/components/examples/BikeEx1"
+                                    }
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Not Found"
@@ -494,14 +504,17 @@
         "/bands": {
             "get": {
                 "tags": [
-                    "UnAuthorize"
+                    "Bands"
                 ],
-                "summary": "Display a listing of the resource.",
+                "summary": "List Bands",
                 "description": "show all bands",
-                "operationId": "bandsIndex",
+                "operationId": "2d88f149248e1048071c7117b2c78bfb",
                 "responses": {
-                    "default": {
-                        "description": "Welcome page"
+                    "200": {
+                        "description": "Hiện danh sách các bands"
+                    },
+                    "404": {
+                        "description": "Not found"
                     }
                 }
             }
@@ -509,14 +522,14 @@
         "/bands/create": {
             "get": {
                 "tags": [
-                    "UnAuthorize"
+                    "Bands"
                 ],
-                "summary": "Show the form for creating a new resource.",
+                "summary": "Tạo band mới",
                 "description": "form tạo bands mới. chưa có code",
                 "operationId": "51284e5b0a97d26ca67145275234946c",
                 "responses": {
-                    "default": {
-                        "description": "Welcome page"
+                    "200": {
+                        "description": "Form tạo Band"
                     }
                 }
             }
@@ -524,17 +537,27 @@
         "/bands/store": {
             "post": {
                 "tags": [
-                    "UnAuthorize"
+                    "Bands"
                 ],
-                "summary": "Store a newly created resource in storage.",
+                "summary": "Create Band",
                 "description": "lưu vào db bands mới. chưa có code",
-                "operationId": "bandsStore",
+                "operationId": "e2ca1a4eaa932019fa58b3e3b4076d69",
                 "requestBody": {
-                    "required": true
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
                 },
                 "responses": {
-                    "default": {
-                        "description": "Welcome page"
+                    "201": {
+                        "description": "Success: A Newly Created Band"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     }
                 }
             }
@@ -542,10 +565,10 @@
         "/bands/{id}": {
             "get": {
                 "tags": [
-                    "UnAuthorize"
+                    "Bands"
                 ],
-                "summary": "get user detail",
-                "description": "view thông tin bands mới. chưa có code",
+                "summary": "get band detail",
+                "description": "view thông tin bands qua id. chưa có code",
                 "operationId": "cbf44e868e6bb76099cb1a519e45d950",
                 "parameters": [
                     {
@@ -569,31 +592,75 @@
                     "404": {
                         "description": "Band not found"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
-                    "Authorize"
+                    "Bands"
                 ],
-                "summary": "Update the specified resource in storage.",
+                "summary": "update band",
                 "description": "lưu vào db thông tin sửa bands. chưa có code",
                 "operationId": "8678223e2b7d08e0d78b54482634f27c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id that need to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
                 "responses": {
-                    "default": {
-                        "description": "Welcome page"
+                    "200": {
+                        "description": "Success: Return the Band updated"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     }
                 }
             },
             "delete": {
                 "tags": [
-                    "Authorize"
+                    "Bands"
                 ],
-                "summary": "Remove the specified resource from storage.",
+                "summary": "delete band",
                 "description": "xóa khỏi db thông tin bands. chưa có code",
                 "operationId": "db8c94d7e25d697de386ab1994687962",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "band id to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
-                    "default": {
-                        "description": "Welcome page"
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "204": {
+                        "description": "Success: successful deleted"
                     }
                 }
             }
@@ -601,14 +668,32 @@
         "/bands/{id}/edit": {
             "get": {
                 "tags": [
-                    "Authorize"
+                    "Bands"
                 ],
-                "summary": "Show the form for editing the specified resource.",
+                "summary": "form sửa bands",
                 "description": "form sửa thông tin bands. chưa có code",
                 "operationId": "d4ea5d030b8dcc75efd5154bd011a102",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id that need to be fetched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 1
+                    }
+                ],
                 "responses": {
-                    "default": {
-                        "description": "Welcome page"
+                    "200": {
+                        "description": "Form sửa band"
+                    },
+                    "400": {
+                        "description": "Invalid Band id supplied"
+                    },
+                    "404": {
+                        "description": "Band not found"
                     }
                 }
             }
@@ -792,20 +877,45 @@
                 },
                 "type": "object"
             }
-        }
-    },
-    "tags": [
-        {
-            "name": "UnAuthorize",
-            "description": "No user login required"
         },
-        {
-            "name": "Authorize",
-            "description": "User login required"
+        "examples": {
+            "BikeEx1": {
+                "summary": "Bike example 1",
+                "value": [
+                    {
+                        "make": "Honda",
+                        "model": "Shadow ACE",
+                        "year": "2007",
+                        "mods": "New exhaust system",
+                        "picture": "http://www.sample.com/my.bike.jpg"
+                    },
+                    {
+                        "make": "Honda",
+                        "model": "Shadow ACE",
+                        "year": "2007",
+                        "mods": "New exhaust system",
+                        "picture": "http://www.sample.com/my.bike.jpg"
+                    }
+                ]
+            },
+            "BikeEx2": {
+                "summary": "Bike example 2",
+                "value": {
+                    "make": "Honda",
+                    "model": "Shadow ACE",
+                    "year": "2007",
+                    "mods": "New exhaust system",
+                    "picture": "http://www.sample.com/my.bike.jpg"
+                }
+            }
         },
-        {
-            "name": "Builders",
-            "description": "Builder model controller"
+        "securitySchemes": {
+            "api_key": {
+                "type": "apiKey",
+                "name": "api_key",
+                "in": "header",
+                "scheme": "api_key"
+            }
         }
-    ]
+    }
 }
