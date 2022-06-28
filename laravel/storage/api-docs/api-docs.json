@@ -14,7 +14,7 @@
     },
     "servers": [
         {
-            "url": "/api/documentation"
+            "url": "/"
         }
     ],
     "paths": {
@@ -93,7 +93,17 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success: Return the Bike"
+                        "description": "Success: Return the Bike",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "1": {
+                                        "$ref": "#/components/examples/BikeEx2"
+                                    }
+                                }
+                            }
+                        }
                     },
                     "404": {
                         "description": "Not Found"
@@ -121,13 +131,28 @@
                 "requestBody": {
                     "content": {
                         "application/json": {
-                            "schema": {}
+                            "schema": {},
+                            "examples": {
+                                "1": {
+                                    "$ref": "#/components/examples/BikeEx2"
+                                }
+                            }
                         }
                     }
                 },
                 "responses": {
                     "200": {
-                        "description": "Success: Return the Bike updated"
+                        "description": "Success: Return the Bike updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "1": {
+                                        "$ref": "#/components/examples/BikeEx2"
+                                    }
+                                }
+                            }
+                        }
                     },
                     "422": {
                         "description": "Missing mandatory field"

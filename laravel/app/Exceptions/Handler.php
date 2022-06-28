@@ -6,6 +6,7 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException as UnauthorizedHttpException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException as MethodNotAllowedHttpException;
 use Tymon\JWTAuth\Exceptions\JWTException as JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException as TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException as TokenInvalidException;
@@ -47,8 +48,10 @@ class Handler extends ExceptionHandler
     //custom render
     public function render($request, Throwable $exception)
     {
-        // var_dump($exception);
-        if ($exception instanceof ModelNotFoundException && $request->wantsJson()) { // Enable header Accept: application/json to see the proper error msg
+        if (!$request->wantsJson()) {
+            return parent::render($request, $exception);
+        }
+        if ($exception instanceof ModelNotFoundException) { // Enable header Accept: application/json to see the proper error msg
             return response()->json(
                 ['error' => 'Resource not found'],
                 404

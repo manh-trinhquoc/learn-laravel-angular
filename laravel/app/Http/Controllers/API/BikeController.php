@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Bike;
+use App\Models\Bike;
 use Validator;
 
 class BikeController extends Controller
@@ -110,7 +110,12 @@ class BikeController extends Controller
         * @OA\Response(
             * response=200,
             * description="Success: Return the Bike",
-            * @OA\Schema(ref="#/components/schemas/Bike")
+            * @OA\JsonContent(
+                * @OA\Schema(ref="#/components/schemas/Bike"),
+                * examples = {
+                    * "example": @OA\Schema(ref="#/components/examples/BikeEx2", example="1"),
+                * }
+            * ),
         * ),
         * @OA\Response(
             * response="404",
@@ -148,12 +153,20 @@ class BikeController extends Controller
         * @OA\RequestBody(
     *       @OA\JsonContent(
         *       @OA\Schema(ref="#/components/schemas/Bike"),
+                * examples = {
+                    * "example": @OA\Schema(ref="#/components/examples/BikeEx2", example="1"),
+                * }
  *          )
  *      ),
         * @OA\Response(
             * response=200,
             * description="Success: Return the Bike updated",
-            * @OA\Schema(ref="#/components/schemas/Bike")
+            * @OA\JsonContent(
+                * @OA\Schema(ref="#/components/schemas/Bike"),
+                * examples = {
+                    * "example": @OA\Schema(ref="#/components/examples/BikeEx2", example="1"),
+                * }
+            * ),
         * ),
         * @OA\Response(
             * response="422",

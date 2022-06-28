@@ -4,8 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Rating;
-use App\Bike;
+use App\Models\Rating;
+use App\Models\Bike;
 use App\Http\Resource\RatingResource;
 use App\Http\Resources\RatingResource as ResourcesRatingResource;
 

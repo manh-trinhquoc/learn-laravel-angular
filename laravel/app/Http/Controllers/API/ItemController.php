@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Item;
+use App\Models\Item;
 use Validator;
 
 class ItemController extends Controller

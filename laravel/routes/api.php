@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'bikes' => 'API\BikeController',
-    'builders' => 'API\BuilderController',
-    'items' => 'API\ItemController',
-    'bikes/{bike}/ratings' => 'API\RatingController'
+    'bikes' => API\BikeController::class,
+    'builders' => API\BuilderController::class,
+    'items' => API\ItemController::class,
+    'bikes/{bike}/ratings' => API\RatingController::class
 ]);

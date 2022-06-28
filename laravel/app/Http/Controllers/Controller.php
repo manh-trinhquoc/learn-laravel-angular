@@ -22,7 +22,7 @@ use Illuminate\Routing\Controller as BaseController;
  * )
  *
  * @OA\Server(
-*      url="/api/documentation"
+*      url="/"
 *  )
 *
 * @OA\SecurityScheme(

@@ -1,0 +1,466 @@
+<pre class='xdebug-var-dump' dir='ltr'>
+<small>/var/www/html/app/Exceptions/Handler.php:59:</small>
+<b>object</b>(<i>Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException</i>)[<i>1203</i>]
+  <i>private</i> 'statusCode' <small>(Symfony\Component\HttpKernel\Exception\HttpException)</small> <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>405</font>
+  <i>private</i> 'headers' <small>(Symfony\Component\HttpKernel\Exception\HttpException)</small> <font color='#888a85'>=&gt;</font> 
+    <b>array</b> <i>(size=1)</i>
+      'Allow' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'GET, HEAD, PUT, PATCH, DELETE'</font> <i>(length=29)</i>
+  <i>protected</i> 'message' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'The POST method is not supported for this route. Supported methods: GET, HEAD, PUT, PATCH, DELETE.'</font> <i>(length=98)</i>
+  <i>private</i> 'string' <small>(Exception)</small> <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>''</font> <i>(length=0)</i>
+  <i>protected</i> 'code' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+  <i>protected</i> 'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php'</font> <i>(length=89)</i>
+  <i>protected</i> 'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>117</font>
+  <i>private</i> 'trace' <small>(Exception)</small> <font color='#888a85'>=&gt;</font> 
+    <b>array</b> <i>(size=26)</i>
+      0 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php'</font> <i>(length=89)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>103</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'methodNotAllowed'</font> <i>(length=16)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\AbstractRouteCollection'</font> <i>(length=42)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      1 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php'</font> <i>(length=89)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>40</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'getRouteForMethods'</font> <i>(length=18)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\AbstractRouteCollection'</font> <i>(length=42)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      2 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php'</font> <i>(length=81)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>162</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handleMatchedRoute'</font> <i>(length=18)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\AbstractRouteCollection'</font> <i>(length=42)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      3 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php'</font> <i>(length=72)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>673</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'match'</font> <i>(length=5)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\RouteCollection'</font> <i>(length=34)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      4 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php'</font> <i>(length=72)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>662</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'findRoute'</font> <i>(length=9)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\Router'</font> <i>(length=25)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      5 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php'</font> <i>(length=72)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>651</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dispatchToRoute'</font> <i>(length=15)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\Router'</font> <i>(length=25)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      6 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php'</font> <i>(length=80)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'dispatch'</font> <i>(length=8)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Routing\Router'</font> <i>(length=25)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      7 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>128</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\{closure}'</font> <i>(length=36)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Kernel'</font> <i>(length=33)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      8 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php'</font> <i>(length=102)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>21</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      9 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php'</font> <i>(length=110)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>31</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Middleware\TransformsRequest'</font> <i>(length=55)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      10 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull'</font> <i>(length=63)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      11 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php'</font> <i>(length=102)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>21</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      12 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php'</font> <i>(length=96)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>40</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Middleware\TransformsRequest'</font> <i>(length=55)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      13 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Middleware\TrimStrings'</font> <i>(length=49)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      14 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php'</font> <i>(length=101)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>27</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      15 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Middleware\ValidatePostSize'</font> <i>(length=54)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      16 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php'</font> <i>(length=117)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>86</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      17 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance'</font> <i>(length=70)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      18 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/fruitcake/laravel-cors/src/HandleCors.php'</font> <i>(length=62)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>52</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      19 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Fruitcake\Cors\HandleCors'</font> <i>(length=25)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      20 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php'</font> <i>(length=86)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>39</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      21 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>167</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Http\Middleware\TrustProxies'</font> <i>(length=39)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=2)</i>
+              ...
+      22 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php'</font> <i>(length=75)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>103</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\{closure}'</font> <i>(length=29)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      23 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php'</font> <i>(length=80)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>142</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'then'</font> <i>(length=4)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Pipeline\Pipeline'</font> <i>(length=28)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      24 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php'</font> <i>(length=80)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>111</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'sendRequestThroughRouter'</font> <i>(length=24)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Kernel'</font> <i>(length=33)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+      25 <font color='#888a85'>=&gt;</font> 
+        <b>array</b> <i>(size=6)</i>
+          'file' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/var/www/html/public/index.php'</font> <i>(length=30)</i>
+          'line' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>52</font>
+          'function' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'handle'</font> <i>(length=6)</i>
+          'class' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Illuminate\Foundation\Http\Kernel'</font> <i>(length=33)</i>
+          'type' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'-&gt;'</font> <i>(length=2)</i>
+          'args' <font color='#888a85'>=&gt;</font> 
+            <b>array</b> <i>(size=1)</i>
+              ...
+  <i>private</i> 'previous' <small>(Exception)</small> <font color='#888a85'>=&gt;</font> <font color='#3465a4'>null</font>
+  <i>public</i> 'xdebug_message' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'&lt;tr&gt;&lt;th align=&#39;left&#39; bgcolor=&#39;#f57900&#39; colspan=&quot;5&quot;&gt;&lt;span style=&#39;background-color: #cc0000; color: #fce94f; font-size: x-large;&#39;&gt;( ! )&lt;/span&gt; Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException: The POST method is not supported for this route. Supported methods: GET, HEAD, PUT, PATCH, DELETE. in /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php on line &lt;i&gt;117&lt;/i&gt;&lt;/th&gt;&lt;/tr&gt;&#10;&lt;tr&gt;&lt;th align=&#39;left&#39; bgcolor=&#39;#e9b96e&#39; colspan=&#39;5&#39;&gt;Call Stack&lt;/th&gt;&lt;/tr&gt;&#10;&lt;tr&gt;&lt;th '...</font> <i>(length=63461)</i>
+</pre>{
+    "message": "The POST method is not supported for this route. Supported methods: GET, HEAD, PUT, PATCH, DELETE.",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\MethodNotAllowedHttpException",
+    "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "line": 117,
+    "trace": [
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+            "line": 103,
+            "function": "methodNotAllowed",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+            "line": 40,
+            "function": "getRouteForMethods",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "line": 162,
+            "function": "handleMatchedRoute",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 673,
+            "function": "match",
+            "class": "Illuminate\\Routing\\RouteCollection",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 662,
+            "function": "findRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 651,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 167,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 128,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "line": 40,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "line": 86,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/fruitcake/laravel-cors/src/HandleCors.php",
+            "line": 52,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Fruitcake\\Cors\\HandleCors",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "line": 39,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 103,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 142,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 111,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        },
+        {
+            "file": "/var/www/html/public/index.php",
+            "line": 52,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "->"
+        }
+    ]
+}
