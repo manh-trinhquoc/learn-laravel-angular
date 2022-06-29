@@ -99,6 +99,6 @@ class User extends Authenticatable implements JWTSubject
     */
     public function bikes()
     {
-        return $this->hasMany(App\Bike);
+        return $this->hasMany(App\Models\Bike);
     }
 }

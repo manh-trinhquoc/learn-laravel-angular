@@ -49,6 +49,7 @@ class AuthController extends Controller
     */
     public function register(Request $request)
     {
+        //TODO: tìm hiểu thêm về validator
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255|unique:users',
             'name' => 'required',
@@ -62,12 +63,13 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
-        $token = auth()->login($user);
+        //TODO: tìm hiểu thêm về auth: https://laravel.com/docs/9.x/authentication
+        $token = auth()->guard('api')->login($user);
 
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth('api')->factory()->getTTL() * 60
         ], 201);
     }
 
@@ -114,7 +116,7 @@ class AuthController extends Controller
             return response()->json($validator->errors(), 422);
         }
         $credentials = $request->only(['email', 'password']);
-        if (!$token = auth()->attempt($credentials)) {
+        if (!$token = auth()->guard('api')->attempt($credentials)) {
             return response()->json(['error' => 'Invalid Credentials'], 400);
         }
         $current_user = $request->email;
@@ -123,7 +125,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'current_user' => $current_user,
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->guard('api')->factory()->getTTL() * 60
         ], 200);
     }
 

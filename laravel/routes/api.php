@@ -25,8 +25,8 @@ Route::middleware('jwt.auth')->get('me', function (Request $request) {
 
 // Register Routes
 Route::post('register', [API\AuthController::class, 'register']);
-Route::post('login', 'API\AuthController@login');
-Route::post('logout', 'API\AuthController@logout');
+Route::post('login', [API\AuthController::class, 'login']);
+Route::post('logout', [API\AuthController::class, 'logout']);
 
 Route::apiResources([
     'bikes' => API\BikeController::class,
