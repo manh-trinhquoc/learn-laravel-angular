@@ -6,11 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Rating;
 use App\Models\Bike;
-use App\Http\Resource\RatingResource;
-use App\Http\Resources\RatingResource as ResourcesRatingResource;
+use App\Http\Resources\RatingResource;
 
 class RatingController extends Controller
 {
+    /**
+    * Protect update and delete methods, only for authenticated users.
+    *
+    * @return Unauthorized
+    */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
