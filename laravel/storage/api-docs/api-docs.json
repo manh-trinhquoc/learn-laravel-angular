@@ -18,6 +18,110 @@
         }
     ],
     "paths": {
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Create new User",
+                "description": "Register a new user.",
+                "operationId": "a718f172ff3ac464d723835815f8fb57",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success: A Newly Created User"
+                    },
+                    "200": {
+                        "description": "Success: operation Successfully"
+                    },
+                    "401": {
+                        "description": "Refused: Unauthenticated"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "loggin an user",
+                "description": "Log in a user.",
+                "operationId": "44212a9096e4b09358281e9ec8a0701d",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success: operation Successfully"
+                    },
+                    "401": {
+                        "description": "Refused: Unauthenticated"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "logout an user",
+                "description": "Register a new user.",
+                "operationId": "79854151e609bd20032aa5aa4d5a35c0",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success: operation Successfully"
+                    },
+                    "401": {
+                        "description": "Refused: Unauthenticated"
+                    },
+                    "422": {
+                        "description": "Missing mandatory field"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/api/bikes": {
             "get": {
                 "tags": [

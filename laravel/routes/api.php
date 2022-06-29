@@ -19,6 +19,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('jwt.auth')->get('me', function (Request $request) {
+    return auth()->user();
+});
+
+// Register Routes
+Route::post('register', [API\AuthController::class, 'register']);
+Route::post('login', 'API\AuthController@login');
+Route::post('logout', 'API\AuthController@logout');
+
 Route::apiResources([
     'bikes' => API\BikeController::class,
     'builders' => API\BuilderController::class,

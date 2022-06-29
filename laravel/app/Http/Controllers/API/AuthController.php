@@ -15,35 +15,33 @@ class AuthController extends Controller
     * @param \Illuminate\Http\Request $request
     * @return \Illuminate\Http\Response
     *
-    * @SWG\Post(
+    * @OA\Post(
         * path="/api/register",
         * tags={"Users"},
         * summary="Create new User",
-        * @SWG\Parameter(
-            * name="body",
-            * in="body",
-            * required=true,
-            * @SWG\Schema(ref="#/definitions/User"),
-            * description="Json format",
-        * ),
-        * @SWG\Response(
+        * @OA\RequestBody(
+    *       @OA\JsonContent(
+        *       @OA\Schema(ref="#/components/schemas/User"),
+ *          )
+ *      ),
+        * @OA\Response(
             * response=201,
             * description="Success: A Newly Created User",
-            * @SWG\Schema(ref="#/definitions/User")
+            * @OA\Schema(ref="#/definitions/User")
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=200,
             * description="Success: operation Successfully"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=401,
             * description="Refused: Unauthenticated"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="422",
             * description="Missing mandatory field"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -79,30 +77,28 @@ class AuthController extends Controller
     * @param \Illuminate\Http\Request $request
     * @return \Illuminate\Http\Response
     *
-    * @SWG\Post(
+    * @OA\Post(
         * path="/api/login",
         * tags={"Users"},
         * summary="loggin an user",
-        * @SWG\Parameter(
-            * name="body",
-            * in="body",
-            * required=true,
-            * @SWG\Schema(ref="#/definitions/User"),
-            * description="Json format",
-        * ),
-        * @SWG\Response(
+        * @OA\RequestBody(
+    *       @OA\JsonContent(
+        *       @OA\Schema(ref="#/components/schemas/User"),
+ *          )
+ *      ),
+        * @OA\Response(
             * response=200,
             * description="Success: operation Successfully"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=401,
             * description="Refused: Unauthenticated"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="422",
             * description="Missing mandatory field"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * )
@@ -137,34 +133,32 @@ class AuthController extends Controller
     * @param \Illuminate\Http\Request $request
     * @return \Illuminate\Http\Response
     *
-    * @SWG\Post(
+    * @OA\Post(
         * path="/api/logout",
         * tags={"Users"},
         * summary="logout an user",
-        * @SWG\Parameter(
-            * name="body",
-            * in="body",
-            * required=true,
-            * @SWG\Schema(ref="#/definitions/User"),
-            * description="Json format",
-        * ),
-        * @SWG\Response(
+        * @OA\RequestBody(
+    *       @OA\JsonContent(
+        *       @OA\Schema(ref="#/components/schemas/User"),
+ *          )
+ *      ),
+        * @OA\Response(
             * response=200,
             * description="Success: operation Successfully"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response=401,
             * description="Refused: Unauthenticated"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="422",
             * description="Missing mandatory field"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="404",
             * description="Not Found"
         * ),
-        * @SWG\Response(
+        * @OA\Response(
             * response="405",
             * description="Invalid input"
         * ),
